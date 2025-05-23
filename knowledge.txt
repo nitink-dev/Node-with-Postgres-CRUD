@@ -1,0 +1,5 @@
+  - Config file is used database 
+  - Controllers - containes alogic
+  - data folder - contain a our sql data
+  - middlewares - handle middle ware data with like error handling and middleware validation
+  - models folder contain connection with databse
