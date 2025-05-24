@@ -6,8 +6,13 @@ import pool from "./config/db.js";
 import cors from "cors";
 // Import dotenv to get data from .env file
 import dotenv from "dotenv";
+import userRoutes from "./routes/userRoutes.js";
+import errorHandling from "./middlewares/errorHandler.js";
 
 dotenv.config();
+
+// routes
+app.use("/api", userRoutes);
 
 // Initialize Express app
 const app = express();
@@ -15,6 +20,9 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors());
+
+// error handling
+app.use(errorHandling);
 
 // Test POSTGRES connection
 app.get("/", async (req, res) => {
